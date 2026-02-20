@@ -383,6 +383,17 @@
             }
         }
 
+        /* --- CANVAS BACKGROUND --- */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            pointer-events: none;
+        }
+
         @media (max-width: 640px) {
             .cta-group {
                 flex-direction: column;
@@ -396,6 +407,7 @@
 </head>
 
 <body>
+    <canvas id="bg-canvas"></canvas>
 
     <section class="hero">
         <div class="container">
@@ -466,7 +478,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Warum Beutler Tech?</h2>
-                <p>Digitalisierung bedeutet für uns mehr als nur Code.</p>
+                <p>Digitalisierung bedeutet für uns mehr als nur Code. Wir bieten umfassende Lösungen.</p>
             </div>
             <div class="features-list">
                 <div class="feature-item">
@@ -483,6 +495,18 @@
                     <i data-lucide="shield-check" width="48" height="48"></i>
                     <h3>Made in Germany</h3>
                     <p>Hosting, Support und Entwicklung – alles sicher am Bodensee verwurzelt.</p>
+                </div>
+                <div class="feature-item">
+                    <i data-lucide="brain-circuit" width="48" height="48"></i>
+                    <h3>KI Agents</h3>
+                    <p>Intelligente Assistenten, die Prozesse automatisieren und Kundenanfragen in Echtzeit lösen –
+                        maßgeschneidert für Ihren Anwendungsfall.</p>
+                </div>
+                <div class="feature-item">
+                    <i data-lucide="cloud" width="48" height="48"></i>
+                    <h3>Cloud Implementierung</h3>
+                    <p>Skalierbare und sichere Architektur. Wir bringen Ihre Infrastruktur auf das nächste Level mit
+                        modernen Cloud-Technologien.</p>
                 </div>
             </div>
         </div>
@@ -636,6 +660,117 @@
             el.style.transition = "all 0.6s ease-out";
             observer.observe(el);
         });
+
+        // --- BACKGROUND ANIMATION ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+        let scrollY = window.scrollY;
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initParticles();
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = window.innerWidth < 768 ? 40 : 100;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 2 + 0.5,
+                    baseY: Math.random() * height,
+                    speed: Math.random() * 0.5 + 0.1,
+                    opacity: Math.random() * 0.5 + 0.1
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 0, height);
+            gradient.addColorStop(0, '#0f172a');
+            gradient.addColorStop(1, '#1e1b4b');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // Draw grid
+            ctx.strokeStyle = 'rgba(99, 102, 241, 0.03)';
+            ctx.lineWidth = 1;
+            const gridSize = 50;
+
+            // Apply parallax to grid based on scroll
+            const gridOffsetY = (scrollY * 0.2) % gridSize;
+
+            for (let x = 0; x < width; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+                ctx.stroke();
+            }
+            for (let y = -gridSize; y < height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y + gridOffsetY);
+                ctx.lineTo(width, y + gridOffsetY);
+                ctx.stroke();
+            }
+
+            // Draw particles
+            particles.forEach((p, index) => {
+                // Scroll parallax effect
+                p.y = p.baseY - (scrollY * p.speed);
+
+                // Wrap around when scrolling up/down
+                if (p.y < -10) {
+                    p.baseY += height + 20;
+                    p.y = p.baseY - (scrollY * p.speed);
+                } else if (p.y > height + 10) {
+                    p.baseY -= height + 20;
+                    p.y = p.baseY - (scrollY * p.speed);
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(99, 102, 241, ${p.opacity})`;
+                ctx.fill();
+
+                // Connect nearby particles softly
+                for (let j = index + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(99, 102, 241, ${0.1 * (1 - dist / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', resize);
+        window.addEventListener('scroll', () => {
+            scrollY = window.scrollY;
+        }, { passive: true });
+
+        // Initialize
+        resize();
+        draw();
     </script>
 </body>
 
