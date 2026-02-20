@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beutler Tech | Custom Software Solutions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #10b981;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            position: relative;
+            padding: 100px 0 140px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 99px;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 15px -3px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #4f46e5;
+            box-shadow: 0 20px 25px -5px var(--primary-glow);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- PORTFOLIO --- */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 32px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* --- FEATURES --- */
+        .features {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-item i {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 8px;
+        }
+
+        /* --- CONTACT --- */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 80px 40px;
+            border-radius: 40px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .hero {
+                padding: 60px 0 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge">
+                <i data-lucide="zap" width="16" height="16" style="margin-right: 8px;"></i>
+                High-End Softwareentwicklung vom Bodensee
+            </div>
+            <h1>Automatisierung<br>ohne Kompromisse</h1>
+            <p>Wir bauen spezialisierte Softwarelösungen, die Ihr Unternehmen transformieren. Minimalistisch,
+                leistungsstark und zu 100% auf Ihre Bedürfnisse zugeschnitten.</p>
+            <div class="cta-group">
+                <a href="mailto:david@pfotenplaner.de?subject=Beutler Tech Anfrage" class="btn btn-primary">
+                    Projekt anfragen
+                    <i data-lucide="arrow-right" width="20" height="20"></i>
+                </a>
+                <a href="#portfolio" class="btn btn-outline">Unsere Projekte</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bestehende Lösungen</h2>
+                <p>Ein Auszug unserer erfolgreich implementierten Plattformen.</p>
+            </div>
+            <div class="grid">
+                <!-- PfotenPlaner -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i data-lucide="paw-print"></i>
+                    </div>
+                    <h3>PfotenPlaner</h3>
+                    <p>Die All-in-One Lösung für moderne Hundeschulen. Kursplanung, Kundenverwaltung und Automatisierung
+                        direkt auf dem Smartphone.</p>
+                    <a href="https://pfoten-planer.de" target="_blank" class="card-link">
+                        Live ansehen
+                        <i data-lucide="external-link" width="14" height="14"></i>
+                    </a>
+                </div>
+                <!-- Friseur-App placeholder -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i data-lucide="scissors"></i>
+                    </div>
+                    <h3>HairStyle Pro</h3>
+                    <p>Smartes Terminmanagement für Friseursalons. Reduzieren Sie Terminausfälle durch automatisierte
+                        WhatsApp-Erinnerungen.</p>
+                    <span class="badge"
+                        style="margin-bottom:0; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: var(--accent);">Enterprise
+                        Ready</span>
+                </div>
+                <!-- Logistics/Umzug placeholder -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i data-lucide="truck"></i>
+                    </div>
+                    <h3>MoveFlow</h3>
+                    <p>Effiziente Planung und Abwicklung für Umzugsunternehmen. Von der digitalen Bestandsaufnahme bis
+                        zur Rechnungstellung.</p>
+                    <span class="badge" style="margin-bottom:0;">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Warum Beutler Tech?</h2>
+                <p>Digitalisierung bedeutet für uns mehr als nur Code.</p>
+            </div>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i data-lucide="layout-template" width="48" height="48"></i>
+                    <h3>User-First Design</h3>
+                    <p>Software muss Spaß machen. Wir legen höchsten Wert auf intuitive Bedienung.</p>
+                </div>
+                <div class="feature-item">
+                    <i data-lucide="bot" width="48" height="48"></i>
+                    <h3>Automatisierung</h3>
+                    <p>Wir eliminieren manuelle Aufgaben durch intelligente Workflows.</p>
+                </div>
+                <div class="feature-item">
+                    <i data-lucide="shield-check" width="48" height="48"></i>
+                    <h3>Made in Germany</h3>
+                    <p>Hosting, Support und Entwicklung – alles sicher am Bodensee verwurzelt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Bereit für Ihre eigene Lösung?</h2>
+                <p style="margin-bottom: 40px; color: var(--text-muted);">Egal ob Web-App, Automatisierung oder
+                    Consulting – lassen Sie uns darüber sprechen.</p>
+                <a href="mailto:david@pfotenplaner.de" class="btn btn-primary">
+                    <i data-lucide="mail"></i>
+                    Kontakt aufnehmen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Beutler Tech &middot; Uhldingen-Mühlhofen &middot; Germany</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Simple scroll reveal effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .feature-item').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = "all 0.6s ease-out";
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
