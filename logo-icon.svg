@@ -1,16 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-    <!-- Dark slate background mapping to var(--bg-dark) -->
-    <rect width="512" height="512" rx="128" fill="#0f172a"/>
-    
-    <!-- Code symbol </> with Indigo gradient -->
-    <g fill="none" stroke="url(#grad)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M208 176L96 256l112 80M304 176l112 80-112 80M288 112L224 400"/>
-    </g>
-    
+    <!-- Premium background with subtle gradient -->
     <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#818cf8"/>
-            <stop offset="100%" stop-color="#4f46e5"/>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b"/>
+            <stop offset="100%" stop-color="#0f172a"/>
         </linearGradient>
+        <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#818cf8"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+        </linearGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="15" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
     </defs>
+    
+    <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+    
+    <!-- Minimalist, tech-focused Monogram "BT" or "B" -->
+    <!-- Stylized "B" with geometric cutouts -->
+    <path d="M160 120H300C360 120 400 160 400 210C400 260 360 300 300 300H160V120Z" fill="none" stroke="url(#textGrad)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+    <path d="M160 212H300C360 212 400 252 400 302C400 352 360 392 300 392H160V212Z" fill="none" stroke="url(#textGrad)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Accent dot representing "Tech" / connectivity -->
+    <circle cx="210" cy="302" r="25" fill="#10b981" filter="url(#glow)"/>
 </svg>
