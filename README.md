@@ -13,7 +13,7 @@ Website von [Beutler Tech](https://beutler-tech.de): KI-Beratung und KI-Einführ
 | `assets/css/style.css` | Gemeinsames Stylesheet |
 | `assets/fonts/` | Lokal gehostete Schriften (Inter, Outfit, SIL OFL) |
 | `assets/img/` | Social-Media-Vorschaubild, Apple-Touch-Icon |
-| `favicon.svg`, `robots.txt`, `sitemap.xml` | Icon und Dateien für Suchmaschinen |
+| `logo-icon.svg`, `favicon.ico`, `favicon.png`, `robots.txt`, `sitemap.xml` | Icon und Dateien für Suchmaschinen |
 
 Die Seite lädt keine externen Ressourcen (keine Google Fonts, kein CDN, kein Tracking). Die Icons stammen von [Lucide](https://lucide.dev) (ISC) und sind als SVG direkt im HTML eingebettet.
 
