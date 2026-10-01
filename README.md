@@ -20,7 +20,7 @@ Die Seite lädt keine externen Ressourcen (keine Google Fonts, kein CDN, kein Tr
 ## Vor dem Livegang
 
 - Gelb markierte Platzhalter (`class="todo"`) in `impressum.html` und `datenschutz.html` ausfüllen.
-- Postfach `kontakt@beutler-tech.de` einrichten.
+- Postfach `info@beutler-tech.de` einrichten.
 - Bei Inhaltsänderungen das Datum `lastmod` in `sitemap.xml` aktualisieren.
 
 ## GitHub Pages Deployment
