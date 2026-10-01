@@ -1,15 +1,32 @@
 # Beutler Tech Website
 
-Official website for [Beutler Tech](https://beutler-tech.de) — Custom Software Solutions from Lake Constance.
+Website von [Beutler Tech](https://beutler-tech.de): KI-Beratung und KI-Einführung für kleine und mittelständische Unternehmen am Bodensee.
+
+## Aufbau
+
+| Datei | Inhalt |
+|-------|--------|
+| `index.html` | Startseite (inkl. SEO-Metadaten, strukturierte Daten und FAQ) |
+| `impressum.html`, `datenschutz.html` | Pflichtangaben |
+| `404.html` | Fehlerseite für GitHub Pages |
+| `assets/css/style.css` | Gemeinsames Stylesheet |
+| `assets/fonts/` | Lokal gehostete Schriften (Inter, Outfit, SIL OFL) |
+| `assets/img/` | Social-Media-Vorschaubild, Apple-Touch-Icon |
+| `favicon.svg`, `robots.txt`, `sitemap.xml` | Icon und Dateien für Suchmaschinen |
+
+Die Seite lädt keine externen Ressourcen (keine Google Fonts, kein CDN, kein Tracking). Die Icons stammen von [Lucide](https://lucide.dev) (ISC) und sind als SVG direkt im HTML eingebettet.
+
+## Vor dem Livegang
+
+- Gelb markierte Platzhalter (`class="todo"`) in `impressum.html` und `datenschutz.html` ausfüllen.
+- Postfach `kontakt@beutler-tech.de` einrichten.
+- Bei Inhaltsänderungen das Datum `lastmod` in `sitemap.xml` aktualisieren.
 
 ## GitHub Pages Deployment
 
-- The site is served via GitHub Pages with a custom domain: **beutler-tech.de**
-- The main file is `index.html` (self-contained HTML with embedded CSS)
+Die Seite wird über GitHub Pages mit der eigenen Domain **beutler-tech.de** ausgeliefert (`CNAME`).
 
 ## DNS Setup
-
-To connect the custom domain, set these DNS records at your registrar:
 
 | Type | Name | Value |
 |------|------|-------|

@@ -4,447 +4,676 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beutler Tech | Custom Software Solutions</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700;900&display=swap"
-        rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --primary: #6366f1;
-            --primary-glow: rgba(99, 102, 241, 0.4);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #10b981;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    <title>KI-Beratung am Bodensee für KMU | Beutler Tech</title>
+    <meta name="description"
+        content="KI-Beratung & KI-Einführung für kleine und mittelständische Unternehmen am Bodensee: Potenzialanalyse, KI-Schulungen nach EU AI Act, KI-Assistenten und Automatisierung – DSGVO-konform, persönlich, aus Uhldingen-Mühlhofen.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="David Beutler">
+    <link rel="canonical" href="https://beutler-tech.de/">
+    <meta name="theme-color" content="#0f172a">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- Lokale Region (für regionale Suche) -->
+    <meta name="geo.region" content="DE-BW">
+    <meta name="geo.placename" content="Uhldingen-Mühlhofen">
+    <meta name="geo.position" content="47.7333;9.2500">
+    <meta name="ICBM" content="47.7333, 9.2500">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Beutler Tech">
+    <meta property="og:url" content="https://beutler-tech.de/">
+    <meta property="og:title" content="KI-Beratung am Bodensee für KMU | Beutler Tech">
+    <meta property="og:description"
+        content="KI im Mittelstand einführen – praxisnah, DSGVO-konform und mit messbarem Nutzen. Persönliche KI-Beratung, Schulungen und Umsetzung rund um den Bodensee.">
+    <meta property="og:image" content="https://beutler-tech.de/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Beutler Tech – KI-Beratung für KMU am Bodensee">
+    <meta name="twitter:card" content="summary_large_image">
 
-        h1,
-        h2,
-        h3 {
-            font-family: 'Outfit', sans-serif;
-        }
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+    <link rel="preload" href="/assets/fonts/outfit-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 
-        /* --- HERO --- */
-        .hero {
-            position: relative;
-            padding: 100px 0 140px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 99px;
-            color: var(--primary);
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            background: linear-gradient(to right, #fff, var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 10px 15px -3px var(--primary-glow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background: #4f46e5;
-            box-shadow: 0 20px 25px -5px var(--primary-glow);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* --- PORTFOLIO --- */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            padding: 32px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            margin-bottom: 24px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 24px;
-        }
-
-        .card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .card-link:hover {
-            text-decoration: underline;
-        }
-
-        /* --- FEATURES --- */
-        .features {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .features-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-item {
-            text-align: center;
-        }
-
-        .feature-item i {
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .feature-item h3 {
-            margin-bottom: 8px;
-        }
-
-        /* --- CONTACT --- */
-        .contact {
-            text-align: center;
-        }
-
-        .contact-box {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 80px 40px;
-            border-radius: 40px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* --- ANIMATIONS --- */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+    <!-- Strukturierte Daten für Suchmaschinen -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://beutler-tech.de/#business",
+                "name": "Beutler Tech",
+                "alternateName": "Beutler Tech – KI-Beratung am Bodensee",
+                "description": "KI-Beratung, KI-Schulungen und KI-Einführung für kleine und mittelständische Unternehmen in der Bodenseeregion. Potenzialanalyse, KI-Assistenten, Prozessautomatisierung, DSGVO und EU AI Act.",
+                "url": "https://beutler-tech.de/",
+                "logo": "https://beutler-tech.de/assets/img/apple-touch-icon.png",
+                "image": "https://beutler-tech.de/assets/img/og-image.png",
+                "email": "kontakt@beutler-tech.de",
+                "founder": { "@id": "https://beutler-tech.de/#david" },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Uhldingen-Mühlhofen",
+                    "postalCode": "88690",
+                    "addressRegion": "Baden-Württemberg",
+                    "addressCountry": "DE"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 47.7333,
+                    "longitude": 9.25
+                },
+                "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Bodenseekreis" },
+                    { "@type": "AdministrativeArea", "name": "Landkreis Konstanz" },
+                    { "@type": "AdministrativeArea", "name": "Landkreis Ravensburg" },
+                    { "@type": "AdministrativeArea", "name": "Landkreis Sigmaringen" },
+                    { "@type": "AdministrativeArea", "name": "Landkreis Lindau (Bodensee)" },
+                    { "@type": "City", "name": "Überlingen" },
+                    { "@type": "City", "name": "Friedrichshafen" },
+                    { "@type": "City", "name": "Konstanz" },
+                    { "@type": "City", "name": "Ravensburg" },
+                    { "@type": "City", "name": "Lindau" },
+                    { "@type": "City", "name": "Meersburg" },
+                    { "@type": "City", "name": "Markdorf" },
+                    { "@type": "City", "name": "Singen" },
+                    { "@type": "City", "name": "Radolfzell" },
+                    { "@type": "Country", "name": "Deutschland" }
+                ],
+                "knowsAbout": [
+                    "Künstliche Intelligenz",
+                    "KI-Beratung",
+                    "KI-Einführung im Mittelstand",
+                    "Generative KI",
+                    "KI-Assistenten und Chatbots",
+                    "Prozessautomatisierung",
+                    "EU AI Act",
+                    "DSGVO",
+                    "Digitalisierung"
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "KI-Dienstleistungen für KMU",
+                    "itemListElement": [
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Potenzialanalyse und KI-Strategie" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Schulungen und Workshops (KI-Kompetenz nach EU AI Act)" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Assistenten und Chatbots auf Basis eigener Unternehmensdaten" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prozessautomatisierung mit KI" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Beratung zu DSGVO und EU AI Act beim KI-Einsatz" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Begleitung und Change Management" } }
+                    ]
+                }
+            },
+            {
+                "@type": "Person",
+                "@id": "https://beutler-tech.de/#david",
+                "name": "David Beutler",
+                "jobTitle": "KI-Berater und Gründer",
+                "worksFor": { "@id": "https://beutler-tech.de/#business" }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://beutler-tech.de/#website",
+                "url": "https://beutler-tech.de/",
+                "name": "Beutler Tech",
+                "inLanguage": "de-DE",
+                "publisher": { "@id": "https://beutler-tech.de/#business" }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Was kostet eine KI-Beratung für mein Unternehmen?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Das Erstgespräch (ca. 30 Minuten) ist kostenlos und unverbindlich. Danach erhalten Sie ein transparentes Festpreisangebot – etwa für eine Potenzialanalyse, einen Workshop oder ein Pilotprojekt. So wissen Sie vorher genau, was Sie erwartet." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Brauchen wir eine eigene IT-Abteilung, um KI einzuführen?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Nein. Gerade kleine und mittelständische Unternehmen ohne eigene IT-Abteilung profitieren von einer Begleitung. Ich übernehme die technische Seite und sorge dafür, dass Ihr Team die Lösungen im Alltag sicher nutzen kann." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Sind unsere Daten beim Einsatz von KI sicher?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Datenschutz steht bei mir an erster Stelle. Ich setze auf DSGVO-konforme Lösungen, wo möglich mit Datenverarbeitung in der EU oder mit lokal betriebenen KI-Modellen, sodass sensible Daten Ihr Unternehmen nicht verlassen. Vor jedem Projekt klären wir gemeinsam, welche Daten wie verarbeitet werden." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Müssen Unternehmen ihre Mitarbeitenden im Umgang mit KI schulen?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Seit Februar 2025 verpflichtet der EU AI Act (Artikel 4) Unternehmen, die KI-Systeme einsetzen, für ausreichende KI-Kompetenz ihrer Mitarbeitenden zu sorgen. Meine praxisnahen KI-Schulungen helfen Ihnen, diese Anforderung zu erfüllen und KI gleichzeitig produktiv zu nutzen." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie schnell sehen wir erste Ergebnisse?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Ein erster Pilot für einen konkreten Anwendungsfall ist häufig innerhalb weniger Wochen einsatzbereit. Ich setze bewusst auf kleine, schnelle Erfolge statt auf große Strategiepapiere." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Gibt es Fördermittel für KI- und Digitalisierungsprojekte?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Für kleine und mittelständische Unternehmen gibt es immer wieder Förderprogramme von Bund und Land Baden-Württemberg, die Beratung oder Digitalisierungsprojekte bezuschussen können. Welche aktuell passen, prüfen wir gerne gemeinsam im Erstgespräch." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Arbeiten Sie nur am Bodensee oder auch überregional?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Mein Schwerpunkt liegt auf der Bodenseeregion – von Überlingen und Friedrichshafen über Konstanz bis Ravensburg und Lindau. Hier komme ich gerne persönlich vorbei. Beratung und Schulungen sind aber auch remote in ganz Deutschland, Österreich und der Schweiz möglich." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Mit welchen KI-Tools arbeiten Sie?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Ich arbeite herstellerunabhängig. Je nach Anforderung, Budget und Datenschutzbedarf kommen z. B. ChatGPT, Microsoft Copilot, Claude, Mistral oder lokal betriebene Open-Source-Modelle zum Einsatz. Entscheidend ist, was zu Ihrem Unternehmen passt – nicht, was gerade im Trend liegt." }
+                    }
+                ]
             }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .cta-group {
-                flex-direction: column;
-            }
-
-            .hero {
-                padding: 60px 0 80px;
-            }
-        }
-    </style>
+        ]
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-    <section class="hero">
-        <div class="container">
-            <div class="badge">
-                <i data-lucide="zap" width="16" height="16" style="margin-right: 8px;"></i>
-                High-End Softwareentwicklung vom Bodensee
-            </div>
-            <h1>Automatisierung<br>ohne Kompromisse</h1>
-            <p>Wir bauen spezialisierte Softwarelösungen, die Ihr Unternehmen transformieren. Minimalistisch,
-                leistungsstark und zu 100% auf Ihre Bedürfnisse zugeschnitten.</p>
-            <div class="cta-group">
-                <a href="mailto:david@pfotenplaner.de?subject=Beutler Tech Anfrage" class="btn btn-primary">
-                    Projekt anfragen
-                    <i data-lucide="arrow-right" width="20" height="20"></i>
-                </a>
-                <a href="#portfolio" class="btn btn-outline">Unsere Projekte</a>
-            </div>
-        </div>
-    </section>
+    <header class="site-header">
+        <nav class="container nav" aria-label="Hauptnavigation">
+            <a href="/" class="logo" aria-label="Beutler Tech – Startseite">
+                <img src="/favicon.svg" alt="" width="32" height="32">
+                Beutler Tech
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></svg>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#vorgehen">Vorgehen</a></li>
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#kontakt" class="btn btn-primary">Erstgespräch</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="section" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Bestehende Lösungen</h2>
-                <p>Ein Auszug unserer erfolgreich implementierten Plattformen.</p>
-            </div>
-            <div class="grid">
-                <!-- PfotenPlaner -->
-                <div class="card">
-                    <div class="card-icon">
-                        <i data-lucide="paw-print"></i>
-                    </div>
-                    <h3>PfotenPlaner</h3>
-                    <p>Die All-in-One Lösung für moderne Hundeschulen. Kursplanung, Kundenverwaltung und Automatisierung
-                        direkt auf dem Smartphone.</p>
-                    <a href="https://pfoten-planer.de" target="_blank" class="card-link">
-                        Live ansehen
-                        <i data-lucide="external-link" width="14" height="14"></i>
+    <main id="main">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <p class="badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                    KI-Beratung für KMU am Bodensee
+                </p>
+                <h1>KI im Mittelstand einführen –<br><span class="gradient-text">praxisnah, sicher, mit
+                        Mehrwert.</span></h1>
+                <p class="lead">Viele Unternehmen wissen, dass Künstliche Intelligenz enorme Chancen bietet – aber
+                    nicht, wo sie anfangen sollen. Ich begleite kleine und mittelständische Unternehmen in der
+                    Bodenseeregion von der ersten Idee bis zur KI-Anwendung, die Ihr Team im Alltag wirklich nutzt.</p>
+                <div class="cta-group">
+                    <a href="#kontakt" class="btn btn-primary">
+                        Kostenloses Erstgespräch
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                     </a>
+                    <a href="#vorgehen" class="btn btn-outline">So läuft die KI-Einführung ab</a>
                 </div>
-                <!-- Friseur-App placeholder -->
-                <div class="card">
-                    <div class="card-icon">
-                        <i data-lucide="scissors"></i>
+                <ul class="trust-row">
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg> DSGVO-konform</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18" /><path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /><path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /><path d="M7 21h10" /></svg> EU AI Act im Blick</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3" /><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /><path d="m21 3 1 11h-2" /><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" /><path d="M3 4h8" /></svg> Persönlich vor Ort</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" /></svg> Herstellerunabhängig</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROBLEM -->
+        <section class="section section-alt" aria-labelledby="problem-title">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Die Herausforderung</span>
+                    <h2 id="problem-title">Warum KI-Projekte in KMU oft stecken bleiben</h2>
+                    <p>KI-Tools gibt es genug. Was fehlt, ist der Weg von der Neugier zum echten Nutzen im
+                        Unternehmensalltag.</p>
+                </div>
+                <div class="grid grid-4">
+                    <div class="card problem-card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg></div>
+                        <h3>Wo anfangen?</h3>
+                        <p>Unzählige Tools und Versprechen – aber unklar, welcher Anwendungsfall sich für Ihr
+                            Unternehmen wirklich lohnt.</p>
                     </div>
-                    <h3>HairStyle Pro</h3>
-                    <p>Smartes Terminmanagement für Friseursalons. Reduzieren Sie Terminausfälle durch automatisierte
-                        WhatsApp-Erinnerungen.</p>
-                    <span class="badge"
-                        style="margin-bottom:0; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: var(--accent);">Enterprise
-                        Ready</span>
-                </div>
-                <!-- Logistics/Umzug placeholder -->
-                <div class="card">
-                    <div class="card-icon">
-                        <i data-lucide="truck"></i>
+                    <div class="card problem-card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></div>
+                        <h3>Unsicherheit beim Datenschutz</h3>
+                        <p>DSGVO, EU AI Act, Geschäftsgeheimnisse: Aus Sorge vor Fehlern passiert lieber gar nichts.
+                        </p>
                     </div>
-                    <h3>MoveFlow</h3>
-                    <p>Effiziente Planung und Abwicklung für Umzugsunternehmen. Von der digitalen Bestandsaufnahme bis
-                        zur Rechnungstellung.</p>
-                    <span class="badge" style="margin-bottom:0;">Coming Soon</span>
+                    <div class="card problem-card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><path d="M16 3.128a4 4 0 0 1 0 7.744" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><circle cx="9" cy="7" r="4" /></svg></div>
+                        <h3>Team nicht mitgenommen</h3>
+                        <p>Ohne Schulung und Akzeptanz bleiben KI-Lizenzen ungenutzt oder werden unkontrolliert
+                            eingesetzt.</p>
+                    </div>
+                    <div class="card problem-card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg></div>
+                        <h3>Keine Zeit, keine Ressourcen</h3>
+                        <p>Das Tagesgeschäft lässt keinen Raum, sich neben allem anderen auch noch in KI
+                            einzuarbeiten.</p>
+                    </div>
                 </div>
+                <p class="bridge">Genau hier setze ich an: <strong>Ich übersetze KI in konkreten Nutzen für Ihren
+                        Betrieb.</strong></p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Warum Beutler Tech?</h2>
-                <p>Digitalisierung bedeutet für uns mehr als nur Code.</p>
+        <!-- LEISTUNGEN -->
+        <section class="section" id="leistungen" aria-labelledby="leistungen-title">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Leistungen</span>
+                    <h2 id="leistungen-title">KI-Dienstleistungen für kleine und mittelständische Unternehmen</h2>
+                    <p>Von der Orientierung bis zur fertigen Lösung – modular, verständlich und auf Ihre Größe
+                        zugeschnitten.</p>
+                </div>
+                <div class="grid">
+                    <article class="card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></div>
+                        <h3>KI-Potenzialanalyse &amp; Strategie</h3>
+                        <p>Wir schauen uns gemeinsam Ihre Abläufe an und finden die Stellen, an denen KI am meisten
+                            Zeit und Geld spart.</p>
+                        <ul>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Prozess-Check vor Ort oder remote</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Priorisierte Anwendungsfälle mit Aufwand &amp; Nutzen</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Konkreter Fahrplan statt Hochglanzfolien</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></svg></div>
+                        <h3>KI-Schulungen &amp; Workshops</h3>
+                        <p>Praxisnahe Trainings, die Ihr Team befähigen, KI-Tools sicher und produktiv einzusetzen –
+                            inklusive Nachweis der KI-Kompetenz nach EU AI Act.</p>
+                        <ul>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Inhouse-Workshops für Teams &amp; Führungskräfte</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Prompting, Tools &amp; sichere Nutzung</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Mit Ihren echten Aufgaben als Übung</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></svg></div>
+                        <h3>KI-Assistenten &amp; Chatbots</h3>
+                        <p>Ein KI-Assistent, der Ihr Unternehmenswissen kennt: Handbücher, Produktdaten, Verträge oder
+                            FAQ – für Mitarbeitende oder Ihre Kunden.</p>
+                        <ul>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Antworten auf Basis Ihrer eigenen Dokumente</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Website-Chatbot für Kundenanfragen</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Auf Wunsch mit lokalen KI-Modellen</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2" /><path d="M7 11v4a2 2 0 0 0 2 2h4" /><rect width="8" height="8" x="13" y="13" rx="2" /></svg></div>
+                        <h3>Prozessautomatisierung mit KI</h3>
+                        <p>Wiederkehrende Routinearbeit an KI und Automatisierung übergeben – damit Ihr Team Zeit für das
+                            Wesentliche hat.</p>
+                        <ul>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> E-Mails, Angebote &amp; Dokumente</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Anbindung an bestehende Software</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Mensch behält die Kontrolle</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></div>
+                        <h3>Datenschutz, DSGVO &amp; EU AI Act</h3>
+                        <p>KI rechtssicher einsetzen: Ich helfe bei der Auswahl datenschutzfreundlicher Tools und bei
+                            klaren Regeln für die KI-Nutzung im Unternehmen.</p>
+                        <ul>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> KI-Nutzungsrichtlinie für Ihr Team</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Tool-Auswahl nach Datenschutzkriterien</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Orientierung zu den Pflichten aus dem EU AI Act</li>
+                        </ul>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3" /><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4" /><path d="M5 21h14" /></svg></div>
+                        <h3>Begleitung &amp; KI-Sparring</h3>
+                        <p>KI-Einführung ist kein einmaliges Projekt. Ich bleibe Ihr Ansprechpartner, wenn neue Fragen,
+                            Tools oder Ideen aufkommen.</p>
+                        <ul>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Regelmäßige Check-ins</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Erfolg messen &amp; nachschärfen</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg> Neue Anwendungsfälle erschließen</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
-            <div class="features-list">
-                <div class="feature-item">
-                    <i data-lucide="layout-template" width="48" height="48"></i>
-                    <h3>User-First Design</h3>
-                    <p>Software muss Spaß machen. Wir legen höchsten Wert auf intuitive Bedienung.</p>
-                </div>
-                <div class="feature-item">
-                    <i data-lucide="bot" width="48" height="48"></i>
-                    <h3>Automatisierung</h3>
-                    <p>Wir eliminieren manuelle Aufgaben durch intelligente Workflows.</p>
-                </div>
-                <div class="feature-item">
-                    <i data-lucide="shield-check" width="48" height="48"></i>
-                    <h3>Made in Germany</h3>
-                    <p>Hosting, Support und Entwicklung – alles sicher am Bodensee verwurzelt.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section contact">
-        <div class="container">
-            <div class="contact-box">
-                <h2>Bereit für Ihre eigene Lösung?</h2>
-                <p style="margin-bottom: 40px; color: var(--text-muted);">Egal ob Web-App, Automatisierung oder
-                    Consulting – lassen Sie uns darüber sprechen.</p>
-                <a href="mailto:david@pfotenplaner.de" class="btn btn-primary">
-                    <i data-lucide="mail"></i>
-                    Kontakt aufnehmen
-                </a>
+        <!-- ANWENDUNGSBEISPIELE -->
+        <section class="section section-alt" aria-labelledby="beispiele-title">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Praxisbeispiele</span>
+                    <h2 id="beispiele-title">Wo KI im Mittelstand heute schon Mehrwert bringt</h2>
+                    <p>Typische Anwendungsfälle, die sich in vielen Branchen schnell und mit überschaubarem Aufwand
+                        umsetzen lassen.</p>
+                </div>
+                <div class="grid">
+                    <div class="card usecase reveal">
+                        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></div>
+                        <div>
+                            <h3>E-Mail-Postfach entlasten</h3>
+                            <p>Anfragen automatisch sortieren, zusammenfassen und passende Antwortentwürfe vorschlagen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card usecase reveal">
+                        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /><path d="M14 2v5a1 1 0 0 0 1 1h5" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></div>
+                        <div>
+                            <h3>Angebote schneller erstellen</h3>
+                            <p>Aus Kundenanfrage und Preisliste in Minuten einen fertigen Angebotsentwurf erzeugen.</p>
+                        </div>
+                    </div>
+                    <div class="card usecase reveal">
+                        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16" /><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" /></svg></div>
+                        <div>
+                            <h3>Firmenwissen auf Knopfdruck</h3>
+                            <p>Mitarbeitende fragen einen internen KI-Assistenten statt in Ordnern und Köpfen zu
+                                suchen.</p>
+                        </div>
+                    </div>
+                    <div class="card usecase reveal">
+                        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /><path d="M7 8h8" /><path d="M7 12h10" /><path d="M7 16h6" /></svg></div>
+                        <div>
+                            <h3>Dokumente &amp; Belege auslesen</h3>
+                            <p>Rechnungen, Lieferscheine oder Formulare automatisch erfassen und weiterverarbeiten.</p>
+                        </div>
+                    </div>
+                    <div class="card usecase reveal">
+                        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" /><path d="M2 6h4" /><path d="M2 10h4" /><path d="M2 14h4" /><path d="M2 18h4" /><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /></svg></div>
+                        <div>
+                            <h3>Protokolle &amp; Berichte</h3>
+                            <p>Besprechungen, Kundentermine oder Baustellenberichte automatisch dokumentieren.</p>
+                        </div>
+                    </div>
+                    <div class="card usecase reveal">
+                        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /></svg></div>
+                        <div>
+                            <h3>Kundenservice rund um die Uhr</h3>
+                            <p>Ein Chatbot beantwortet Standardfragen auf Ihrer Website und übergibt Komplexes an Ihr
+                                Team.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="note">Ihr Anwendungsfall ist nicht dabei? Genau das finden wir im Erstgespräch heraus.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Beutler Tech &middot; Uhldingen-Mühlhofen &middot; Germany</p>
+        <!-- VORGEHEN -->
+        <section class="section" id="vorgehen" aria-labelledby="vorgehen-title">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Vorgehen</span>
+                    <h2 id="vorgehen-title">In vier Schritten zur erfolgreichen KI-Einführung</h2>
+                    <p>Klein anfangen, schnell lernen, sicher skalieren – so wird KI-Adoption im Mittelstand zum Erfolg.
+                    </p>
+                </div>
+                <ol class="grid grid-4 steps">
+                    <li class="card step reveal">
+                        <span class="step-num">1</span>
+                        <span class="meta">ca. 30 Minuten · kostenlos</span>
+                        <h3>Erstgespräch</h3>
+                        <p>Wir lernen uns kennen, sprechen über Ihre Ziele und klären, ob und wie KI Ihnen helfen kann.
+                        </p>
+                    </li>
+                    <li class="card step reveal">
+                        <span class="step-num">2</span>
+                        <span class="meta">Festpreis</span>
+                        <h3>Potenzialanalyse</h3>
+                        <p>Ich analysiere Ihre Prozesse und liefere priorisierte Anwendungsfälle mit realistischem
+                            Aufwand und Nutzen.</p>
+                    </li>
+                    <li class="card step reveal">
+                        <span class="step-num">3</span>
+                        <span class="meta">wenige Wochen</span>
+                        <h3>Pilotprojekt</h3>
+                        <p>Ein konkreter Anwendungsfall wird umgesetzt und im echten Arbeitsalltag getestet – messbar
+                            und überschaubar.</p>
+                    </li>
+                    <li class="card step reveal">
+                        <span class="step-num">4</span>
+                        <span class="meta">nachhaltig</span>
+                        <h3>Einführung &amp; Befähigung</h3>
+                        <p>Schulung Ihres Teams, klare Regeln für die Nutzung und Ausrollen erfolgreicher Lösungen im
+                            ganzen Unternehmen.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- WEITERE TECH-DIENSTLEISTUNGEN -->
+        <section class="section section-alt" aria-labelledby="tech-title">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Mehr als KI</span>
+                    <h2 id="tech-title">Weitere Tech-Dienstleistungen</h2>
+                    <p>KI wirkt am besten, wenn das digitale Fundament stimmt. Auch dabei unterstütze ich Sie.</p>
+                </div>
+                <div class="tech-list">
+                    <div class="tech-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg>
+                        <div>
+                            <h3>Digitalisierungsberatung</h3>
+                            <p>Papierprozesse und Insellösungen erkennen und sinnvoll digitalisieren.</p>
+                        </div>
+                    </div>
+                    <div class="tech-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></svg>
+                        <div>
+                            <h3>Workflow-Automatisierung</h3>
+                            <p>Tools wie n8n, Make oder Power Automate einrichten und Systeme verbinden.</p>
+                        </div>
+                    </div>
+                    <div class="tech-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5" /><path d="M15 8V2" /><path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z" /><path d="M9 8V2" /></svg>
+                        <div>
+                            <h3>Software-Integration</h3>
+                            <p>KI in bestehende Systeme wie Microsoft 365, Google Workspace, CRM oder ERP einbinden.</p>
+                        </div>
+                    </div>
+                    <div class="tech-item reveal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6" /><path d="m8 6-6 6 6 6" /></svg>
+                        <div>
+                            <h3>Individuelle Web-Anwendungen</h3>
+                            <p>Wenn es keine passende Standardlösung gibt: maßgeschneiderte Tools und Web-Apps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÜBER MICH -->
+        <section class="section" id="ueber-mich" aria-labelledby="about-title">
+            <div class="container about">
+                <!-- Tipp: Hier ein echtes Foto einsetzen, z. B.
+                     <img class="avatar" src="/assets/img/david-beutler.jpg" alt="David Beutler, KI-Berater am Bodensee" width="280" height="280"> -->
+                <div class="avatar" role="img" aria-label="David Beutler">DB</div>
+                <div>
+                    <span class="eyebrow">Über mich</span>
+                    <h2 id="about-title">Ihr KI-Berater aus Uhldingen-Mühlhofen</h2>
+                    <p>Ich bin <strong>David Beutler</strong>, Gründer von Beutler Tech. Mein Ziel: Künstliche
+                        Intelligenz für kleine und mittelständische Unternehmen am Bodensee greifbar und nutzbar zu
+                        machen – ohne Fachchinesisch, ohne Hype, mit Blick auf das, was sich für Sie wirklich rechnet.
+                    </p>
+                    <p>Ich komme aus der <strong>Softwareentwicklung</strong> und weiß daher nicht nur, was KI kann,
+                        sondern auch, wie man sie sauber in bestehende Abläufe und Systeme integriert. Diese Verbindung
+                        aus Beratung und Umsetzung macht den Unterschied: Bei mir bleibt es nicht bei der Idee.</p>
+                    <p>Als regionaler Partner bin ich <strong>persönlich erreichbar</strong> und komme gerne zu Ihnen
+                        ins Unternehmen – ob in Überlingen, Friedrichshafen, Konstanz oder Ravensburg.</p>
+                    <div class="reference">
+                        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="4" r="2" /><circle cx="18" cy="8" r="2" /><circle cx="20" cy="16" r="2" /><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" /></svg></div>
+                        <p><strong>Aus der Praxis:</strong> Mit dem <a href="https://pfoten-planer.de" target="_blank"
+                                rel="noopener">PfotenPlaner</a> habe ich eine eigene Software für Hundeschulen entwickelt
+                            und betreibe sie im Echteinsatz – inklusive automatisierter Abläufe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGION -->
+        <section class="section section-alt" aria-labelledby="region-title">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">Region</span>
+                    <h2 id="region-title">KI-Beratung rund um den Bodensee</h2>
+                    <p>Von meinem Standort in Uhldingen-Mühlhofen aus betreue ich Unternehmen in der gesamten
+                        Bodenseeregion und in Oberschwaben persönlich vor Ort – und auf Wunsch remote in ganz
+                        Deutschland, Österreich und der Schweiz.</p>
+                </div>
+                <ul class="region-list">
+                    <li>Uhldingen-Mühlhofen</li>
+                    <li>Überlingen</li>
+                    <li>Meersburg</li>
+                    <li>Salem</li>
+                    <li>Markdorf</li>
+                    <li>Friedrichshafen</li>
+                    <li>Tettnang</li>
+                    <li>Konstanz</li>
+                    <li>Radolfzell</li>
+                    <li>Singen</li>
+                    <li>Stockach</li>
+                    <li>Pfullendorf</li>
+                    <li>Ravensburg</li>
+                    <li>Weingarten</li>
+                    <li>Lindau</li>
+                    <li>Sigmaringen</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">FAQ</span>
+                    <h2 id="faq-title">Häufige Fragen zur KI-Einführung</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>Was kostet eine KI-Beratung für mein Unternehmen? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
+                        <p>Das Erstgespräch (ca. 30 Minuten) ist kostenlos und unverbindlich. Danach erhalten Sie ein
+                            transparentes Festpreisangebot – etwa für eine Potenzialanalyse, einen Workshop oder ein
+                            Pilotprojekt. So wissen Sie vorher genau, was Sie erwartet.</p>
+                    </details>
+                    <details>
+                        <summary>Brauchen wir eine eigene IT-Abteilung, um KI einzuführen? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                        </summary>
+                        <p>Nein. Gerade kleine und mittelständische Unternehmen ohne eigene IT-Abteilung profitieren von
+                            einer Begleitung. Ich übernehme die technische Seite und sorge dafür, dass Ihr Team die
+                            Lösungen im Alltag sicher nutzen kann.</p>
+                    </details>
+                    <details>
+                        <summary>Sind unsere Daten beim Einsatz von KI sicher? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
+                        <p>Datenschutz steht bei mir an erster Stelle. Ich setze auf DSGVO-konforme Lösungen, wo möglich
+                            mit Datenverarbeitung in der EU oder mit lokal betriebenen KI-Modellen, sodass sensible Daten
+                            Ihr Unternehmen nicht verlassen. Vor jedem Projekt klären wir gemeinsam, welche Daten wie
+                            verarbeitet werden.</p>
+                    </details>
+                    <details>
+                        <summary>Müssen Unternehmen ihre Mitarbeitenden im Umgang mit KI schulen?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
+                        <p>Ja. Seit Februar 2025 verpflichtet der EU AI Act (Artikel 4) Unternehmen, die KI-Systeme
+                            einsetzen, für ausreichende KI-Kompetenz ihrer Mitarbeitenden zu sorgen. Meine praxisnahen
+                            KI-Schulungen helfen Ihnen, diese Anforderung zu erfüllen und KI gleichzeitig produktiv zu
+                            nutzen.</p>
+                    </details>
+                    <details>
+                        <summary>Wie schnell sehen wir erste Ergebnisse? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
+                        <p>Ein erster Pilot für einen konkreten Anwendungsfall ist häufig innerhalb weniger Wochen
+                            einsatzbereit. Ich setze bewusst auf kleine, schnelle Erfolge statt auf große
+                            Strategiepapiere.</p>
+                    </details>
+                    <details>
+                        <summary>Gibt es Fördermittel für KI- und Digitalisierungsprojekte? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                        </summary>
+                        <p>Für kleine und mittelständische Unternehmen gibt es immer wieder Förderprogramme von Bund und
+                            Land Baden-Württemberg, die Beratung oder Digitalisierungsprojekte bezuschussen können.
+                            Welche aktuell passen, prüfen wir gerne gemeinsam im Erstgespräch.</p>
+                    </details>
+                    <details>
+                        <summary>Arbeiten Sie nur am Bodensee oder auch überregional? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                        </summary>
+                        <p>Mein Schwerpunkt liegt auf der Bodenseeregion – von Überlingen und Friedrichshafen über
+                            Konstanz bis Ravensburg und Lindau. Hier komme ich gerne persönlich vorbei. Beratung und
+                            Schulungen sind aber auch remote in ganz Deutschland, Österreich und der Schweiz möglich.</p>
+                    </details>
+                    <details>
+                        <summary>Mit welchen KI-Tools arbeiten Sie? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
+                        <p>Ich arbeite herstellerunabhängig. Je nach Anforderung, Budget und Datenschutzbedarf kommen
+                            z. B. ChatGPT, Microsoft Copilot, Claude, Mistral oder lokal betriebene Open-Source-Modelle
+                            zum Einsatz. Entscheidend ist, was zu Ihrem Unternehmen passt – nicht, was gerade im Trend
+                            liegt.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- KONTAKT -->
+        <section class="section" id="kontakt" aria-labelledby="kontakt-title">
+            <div class="container">
+                <div class="contact-box">
+                    <h2 id="kontakt-title">Lassen Sie uns über KI in Ihrem Unternehmen sprechen</h2>
+                    <p>Im kostenlosen Erstgespräch finden wir heraus, wo KI Ihnen den größten Mehrwert bringt.
+                        Unverbindlich, verständlich und ohne Verkaufsdruck.</p>
+                    <a href="mailto:kontakt@beutler-tech.de?subject=Anfrage%20Erstgespr%C3%A4ch%20KI-Beratung"
+                        class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3" /><path d="M16 2v3" /><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /></svg>
+                        Erstgespräch anfragen
+                    </a>
+                    <ul class="contact-meta">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg> <a href="mailto:kontakt@beutler-tech.de">kontakt@beutler-tech.de</a></li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg> Uhldingen-Mühlhofen am Bodensee</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Beutler Tech · KI-Beratung am Bodensee · Uhldingen-Mühlhofen</p>
+            <ul class="footer-links">
+                <li><a href="/impressum.html">Impressum</a></li>
+                <li><a href="/datenschutz.html">Datenschutz</a></li>
+            </ul>
         </div>
     </footer>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Simple scroll reveal effect
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.card, .feature-item').forEach(el => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(20px)";
-            el.style.transition = "all 0.6s ease-out";
-            observer.observe(el);
+        // Mobile Navigation
+        const toggle = document.querySelector('.nav-toggle');
+        const links = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            const open = links.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+            toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
         });
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }));
+
+        // Sanftes Einblenden beim Scrollen
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+        }
     </script>
 </body>
 
