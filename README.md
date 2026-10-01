@@ -7,6 +7,7 @@ Website von [Beutler Tech](https://beutler-tech.de): KI-Beratung und KI-Einführ
 | Datei | Inhalt |
 |-------|--------|
 | `index.html` | Startseite (inkl. SEO-Metadaten, strukturierte Daten und FAQ) |
+| `ueber-mich.html` | Über-mich-Seite (Foto später als `assets/img/david-beutler.jpg` ergänzen) |
 | `impressum.html`, `datenschutz.html` | Pflichtangaben |
 | `404.html` | Fehlerseite für GitHub Pages |
 | `assets/css/style.css` | Gemeinsames Stylesheet |
