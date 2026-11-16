@@ -11,6 +11,7 @@ Website von [Beutler Tech](https://beutler-tech.de): KI-Beratung und KI-Einführ
 | `impressum.html`, `datenschutz.html` | Pflichtangaben |
 | `404.html` | Fehlerseite für GitHub Pages |
 | `assets/css/style.css` | Gemeinsames Stylesheet |
+| `assets/css/animation.css`, `assets/js/animation.js` | Animation „Warum Beutler Tech?“ auf der Startseite (Abschnitt `#warum`) |
 | `assets/fonts/` | Lokal gehostete Schriften (Inter, Outfit, SIL OFL) |
 | `assets/img/` | Social-Media-Vorschaubild, Apple-Touch-Icon |
 | `logo-icon.svg`, `favicon.ico`, `favicon.png`, `robots.txt`, `sitemap.xml` | Icon und Dateien für Suchmaschinen |
