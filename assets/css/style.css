@@ -906,3 +906,16 @@ svg {
         margin: 0 auto;
     }
 }
+
+/* --- ANIMATION „WARUM BEUTLER TECH“ ---
+   Die Animation selbst liegt in assets/css/animation.css (Shadow DOM). */
+@property --wa-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.why-anim {
+    max-width: 1040px;
+    margin: 0 auto;
+}
